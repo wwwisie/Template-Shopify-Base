@@ -1,0 +1,29 @@
+{% if collection.image %}
+  {%- assign collection_image = collection.image -%}
+{% elsif collection.products.first and collection.products.first.images != empty %}
+  {%- assign collection_image = collection.products.first.featured_image -%}
+{% else %}
+  {% assign collection_image = blank %}
+{% endif %}
+
+<div class="collection-grid-item">
+  <a href="{% if collection.products == empty %}#{% else %}{{ collection.url }}{% endif %}" class="collection-grid-item__link">
+    {% unless collection_image == blank %}
+      {% if lazyload %}
+        <img data-lazy="{{ collection_image | img_url: '300x', format: 'pjpg' }}" alt="{{ collection_image.image.alt }}">
+      {% else %}
+        <img src="{{ collection_image | img_url: '300x', format: 'pjpg' }}" alt="{{ collection_image.image.alt }}">
+      {% endif %}
+    {% endunless %}
+
+    <div class="collection-grid-item__title-wrapper">
+      <div class="collection-grid-item__title h3">
+        {% if collection.title == blank %}
+          {{ 'homepage.onboarding.collection_title' | t }}
+        {% else %}
+          {{ collection.title }}
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>

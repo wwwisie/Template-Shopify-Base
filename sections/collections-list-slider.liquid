@@ -1,0 +1,222 @@
+{% assign title = section.settings.title | escape %}
+{% assign alignment = section.settings.alignment %}
+{% assign slide_to_show = section.settings.slidetoshow %}
+{% assign arrows = section.settings.arrows %}
+{% assign dots = section.settings.dots %}
+{% assign button = section.settings.button %}
+{% assign link = section.settings.link %}
+{% assign parallax = section.settings.parallax %}
+{% assign background = section.settings.background %}
+{% assign limit_blocks = section.blocks.size %}
+{% assign lazyload = section.settings.lazyload %}
+
+{% if background != blank %}
+  <div class="background ratio-container lazyload"
+    data-bgset="{% include 'bgset', image: background %}"
+    data-sizes="auto"
+    data-parent-fit="cover"
+    style="{% if parallax %} background-attachment: fixed; {% endif %} background-image: url('{{ background | img_url: '300x', format: 'pjpg' }});"></div>
+{% endif %}
+
+<div class="page-width">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h2 style="text-align: {{ alignment }};">
+        {{ title }}
+      </h2>
+    </div>
+  {% endif %}
+
+  <div class="collection-grid">
+    <ul class="grid grid--uniform collection-slider-wrapper"
+      data-slick='{"arrows": {{ arrows }},"dots": {{ dots }}{% if lazyload %},"lazyLoad": "ondemand"{% endif %}}'>
+      {% for block in section.blocks limit: limit_blocks %}
+        <li class="grid__item {{ grid_item_width }}" {{ block.shopify_attributes }}>
+          {%- assign collection = collections[block.settings.collection] -%}
+          {% include 'collection-grid-item-lazyloadSlick' %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  {% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+  {% endif %}
+
+  {% if button != blank and link != blank %}
+    <div>
+      <a href="{{ link }}" class="btn">Button</a>
+    </div>
+  {% endif %}
+
+</div>
+
+{% javascript %}
+    $('.collection-slider-wrapper').slick({
+      infinite: false,
+      slidesToScroll: 1,
+      responsive: [ { breakpoint: 3000, settings: { slidesToShow: 4 } },
+        { breakpoint: 1024, settings: { slidesToShow: 4 } },
+        { breakpoint: 600, settings: { slidesToShow: 2 } },
+        { breakpoint: 480, settings: { slidesToShow: 1 } } ]
+    });
+  {% endjavascript %}
+
+{% schema %}
+{
+  "name": {
+    "de": "Kategorien-Liste",
+    "en": "Collection list Slider",
+    "es": "Colecciones Slider",
+    "fr": "Liste des collections",
+    "it": "Elenco delle collezioni",
+    "ja": "コレクションリスト",
+    "pt-BR": "Lista de coleções"
+  },
+  "class": "index-section gm--sliders gm--collection-list-slider",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "de": "Titel",
+        "en": "Heading",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "pt-BR": "Título"
+      },
+      "default": {
+        "de": "Kategorien-Liste",
+        "en": "Collection list Slider",
+        "es": "Colecciones Slider",
+        "fr": "Page de liste des collections",
+        "it": "Elenco delle collezioni",
+        "ja": "コレクションリスト",
+        "pt-BR": "Lista de coleções"
+      }
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "options": [
+         { "value": "left", "label": "Left"},
+         { "value": "center", "label": "Center"},
+         { "value": "right", "label": "Right"}
+      ],
+      "label": "Alignment heading"
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "Background image"
+    },
+    {
+      "type": "checkbox",
+      "id": "parallax",
+      "default": false,
+      "label": "Enable parallax effect"
+    },
+    {
+      "type": "header",
+      "content": "Slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "arrows",
+      "default": true,
+      "label": "Enable arrows"
+   },
+   {
+      "type": "checkbox",
+      "id": "dots",
+      "default": true,
+      "label": "Enable dots"
+    },
+    {
+      "type": "checkbox",
+      "id": "lazyload",
+      "default": false,
+      "label": "Enable LazyLoad"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_collection",
+      "name": {
+        "de": "Kategorie",
+        "en": "Collection",
+        "es": "Colección",
+        "fr": "Collection",
+        "it": "Collezione",
+        "ja": "コレクション",
+        "pt-BR": "Coleção"
+      },
+      "settings": [
+        {
+          "label": {
+            "de": "Kategorie",
+            "en": "Collection",
+            "es": "Colección",
+            "fr": "Collection",
+            "it": "Collezione",
+            "ja": "コレクション",
+            "pt-BR": "Coleção"
+          },
+          "id": "collection",
+          "type": "collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "de": "Kategorien-Liste",
+        "en": "Collection list Slider",
+        "es": "Colecciones Slider",
+        "fr": "Page de liste des collections",
+        "it": "Elenco delle collezioni",
+        "ja": "コレクションリスト",
+        "pt-BR": "Lista de coleções"
+      },
+      "category": {
+        "de": "Kategorie",
+        "en": "Collection",
+        "es": "Colección",
+        "fr": "Collection",
+        "it": "Collezione",
+        "ja": "コレクション",
+        "pt-BR": "Coleção"
+      },
+      "blocks": [
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

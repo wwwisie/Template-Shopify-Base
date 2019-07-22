@@ -1,0 +1,377 @@
+<div data-section-id="{{ section.id }}" data-section-type="slideshow-section">
+
+  {% if section.blocks.size > 0 %}
+    <div class="gm_sliders">
+      {% for block in section.blocks %}
+        <div class="gm_sliders_item">
+          <img class="sliders_mobile" srcset="{% include 'bgset-mobile', image: block.settings.image_mobile  %}" alt="">
+
+          <img class="sliders_desktop" srcset="{% include 'bgset-desktop', image: block.settings.image %}" alt="">
+          <div class="gm_sliders_content">
+            <p>{{ block.settings.title }}</p>
+            <p>{{ block.settings.subheading }}</p>
+
+            {% if block.settings.link != blank and block.settings.text_button != blank %}
+              <div class="gm_sliders_button btn">
+                <a href="{{ block.settings.link }}">{{ block.settings.text_button }}</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  {% endif %}
+
+  {% if section.blocks.size == 0 %}
+    <div class="placeholder-noblocks">
+      {{ 'homepage.onboarding.no_content' | t }}
+    </div>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+
+  img.sliders_desktop {
+    display: none;
+  }
+
+  @media(min-width: 750px) {
+    img.sliders_mobile {
+      display: none;
+    }
+
+    img.sliders_desktop {
+      display: block;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  $('.gm_sliders').slick({
+    autoplay: true,
+    autoplaySpeed: 5000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: true
+  });
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": {
+    "de": "Slideshow",
+    "en": "Slideshow",
+    "es": "Diapositivas",
+    "fr": "Diaporama",
+    "it": "Presentazione",
+    "ja": "スライドショー",
+    "pt-BR": "Apresentação de slides"
+  },
+  "class": "index-section index-section--flush",
+  "max_blocks": 4,
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": {
+        "de": "Foto-Slide",
+        "en": "Image slide",
+        "es": "Diapositiva de imagen",
+        "fr": "Diapositive (image)",
+        "it": "Slide immagine",
+        "ja": "画像スライド",
+        "pt-BR": "Slide de imagem"
+      },
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "de": "Foto",
+            "en": "Image",
+            "es": "Imagen",
+            "fr": "Image",
+            "it": "Immagine",
+            "ja": "画像",
+            "pt-BR": "Imagem"
+          }
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": {
+            "de": "Foto",
+            "en": "Image",
+            "es": "Imagen",
+            "fr": "Image",
+            "it": "Immagine",
+            "ja": "画像",
+            "pt-BR": "Imagem"
+          }
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "de": "Titel",
+            "en": "Heading",
+            "es": "Título",
+            "fr": "En-tête",
+            "it": "Heading",
+            "ja": "見出し",
+            "pt-BR": "Título"
+          },
+          "default": {
+            "de": "Foto-Slide",
+            "en": "Image slide",
+            "es": "Diapositiva de imagen",
+            "fr": "Diapositive (image)",
+            "it": "Slide immagine",
+            "ja": "画像スライド",
+            "pt-BR": "Slide de imagem"
+          }
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": {
+            "de": "Untertitel",
+            "en": "Subheading",
+            "es": "Subtítulo",
+            "fr": "Sous-titre",
+            "it": "Sottotitolo",
+            "ja": "小見出し",
+            "pt-BR": "Subtítulo"
+          },
+          "default": {
+            "de": "Erzählen Sie Ihre Geschichte mit Videos und Fotos",
+            "en": "Tell your brand's story through video and images",
+            "es": "Cuenta la historia de tu marca a través de videos e imágenes",
+            "fr": "Racontez votre histoire avec des vidéos et des images",
+            "it": "Racconta la storia del tuo brand con video e immagini",
+            "ja": "あなたのブランドのストーリーをビデオや画像で伝える",
+            "pt-BR": "Conte a história da sua marca com vídeos e imagens"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_button",
+          "label": {
+            "en": "Text button",
+            "es": "Texto de boton"
+          },
+          "default": {
+            "en": "View more",
+            "es": "Ver mas"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "de": "Slide-Link",
+            "en": "Slide link",
+            "es": "Enlace de la diapositiva",
+            "fr": "Lien de la diapositive",
+            "it": "Link slide",
+            "ja": "スライドリンク",
+            "pt-BR": "Link do slide"
+          }
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": {
+        "de": "Video-Slide",
+        "en": "Video slide",
+        "es": "Diapositiva de video",
+        "fr": "Diapositive (vidéo)",
+        "it": "Slide video",
+        "ja": "ビデオスライド",
+        "pt-BR": "Slide de vídeo"
+      },
+      "settings": [
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "label": {
+            "de": "Video-Link",
+            "en": "Video link",
+            "es": "Enlace de video",
+            "fr": "Lien de la vidéo",
+            "it": "Link video",
+            "ja": "ビデオリンク",
+            "pt-BR": "Link do vídeo"
+          },
+          "accept": [
+            "youtube"
+          ],
+          "default": {
+            "de": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "en": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "es": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "fr": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "it": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "ja": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "pt-BR": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          }
+        },
+        {
+          "type": "select",
+          "id": "video_type",
+          "label": {
+            "de": "Stil",
+            "en": "Style",
+            "es": "Estilo",
+            "fr": "Style",
+            "it": "Stile",
+            "ja": "スタイル",
+            "pt-BR": "Estilo"
+          },
+          "options": [
+            {
+              "value": "chrome",
+              "label": {
+                "de": "Foto mit Play Button",
+                "en": "Image with play button",
+                "es": "Imagen con el botón de reproducir",
+                "fr": "Image avec bouton de lecture",
+                "it": "Immagine con pulsante play",
+                "ja": "再生ボタン付き画像",
+                "pt-BR": "Imagem com botão de reprodução"
+              }
+            },
+            {
+              "value": "background-chrome",
+              "label": {
+                "de": "Hintergrund-Video mit Play Button",
+                "en": "Background video with play button",
+                "es": "Video de fondo con el botón de reproducir",
+                "fr": "Vidéo d'arrière-plan avec bouton de lecture",
+                "it": "Video in background con pulsante play",
+                "ja": "再生ボタン付き背景ビデオ",
+                "pt-BR": "Vídeo de fundo com botão de reprodução"
+              }
+            },
+            {
+              "value": "background",
+              "label": {
+                "de": "Hintergrund-Video",
+                "en": "Background video",
+                "es": "Video de fondo",
+                "fr": "Vidéo d'arrière-plan",
+                "it": "Video in background",
+                "ja": "背景ビデオ",
+                "pt-BR": "Vídeo de fundo"
+              }
+            }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "de": "Foto",
+            "en": "Image",
+            "es": "Imagen",
+            "fr": "Image",
+            "it": "Immagine",
+            "ja": "画像",
+            "pt-BR": "Imagem"
+          },
+          "info": {
+            "de": "Ersatz, falls Video nicht automatisch auf Mobilgeräten abspielt",
+            "en": "Fallback when autoplaying video is not supported on mobile devices",
+            "es": "No se admite reserva cuando se reproduce un video en dispositivos móviles automáticamente",
+            "fr": "Image affichée lorsque la vidéo n'est pas supportée sur les appareils mobiles",
+            "it": "Immagine alternativa per i dispositivi mobili che non supportano la riproduzione automatica del video",
+            "ja": "モバイル端末でビデオの自動再生がサポートされていない場合のフォールバック",
+            "pt-BR": "Alternativa quando a reprodução automática de vídeo não for compatível com dispositivos móveis"
+          }
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "de": "Titel",
+            "en": "Heading",
+            "es": "Título",
+            "fr": "En-tête",
+            "it": "Heading",
+            "ja": "見出し",
+            "pt-BR": "Título"
+          },
+          "default": {
+            "de": "Video-Slide",
+            "en": "Video slide",
+            "es": "Diapositiva de video",
+            "fr": "Diapositive (vidéo)",
+            "it": "Slide video",
+            "ja": "ビデオスライド",
+            "pt-BR": "Slide de vídeo"
+          }
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": {
+            "de": "Untertitel",
+            "en": "Subheading",
+            "es": "Subtítulo",
+            "fr": "Sous-titre",
+            "it": "Sottotitolo",
+            "ja": "小見出し",
+            "pt-BR": "Subtítulo"
+          },
+          "default": {
+            "de": "Erzählen Sie Ihre Geschichte mit Videos und Fotos",
+            "en": "Tell your brand's story through video and images",
+            "es": "Cuenta la historia de tu marca a través de videos e imágenes",
+            "fr": "Racontez votre histoire avec des vidéos et des images",
+            "it": "Racconta la storia del tuo brand con video e immagini",
+            "ja": "あなたのブランドのストーリーをビデオや画像で伝える",
+            "pt-BR": "Conte a história da sua marca com vídeos e imagens"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "de": "Slideshow",
+        "en": "Slideshow",
+        "es": "Diapositivas",
+        "fr": "Diaporama",
+        "it": "Presentazione",
+        "ja": "スライドショー",
+        "pt-BR": "Apresentação de slides"
+      },
+      "category": {
+        "de": "Foto",
+        "en": "Image",
+        "es": "Imagen",
+        "fr": "Image",
+        "it": "Immagine",
+        "ja": "画像",
+        "pt-BR": "Imagem"
+      },
+      "settings": {
+      },
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

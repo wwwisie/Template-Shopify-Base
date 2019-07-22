@@ -1,0 +1,74 @@
+//-----------------------------------------------------------------------------------\\
+//-----------------------------------Texto Responsive--------------------------------\\
+//-----------------------------------------------------------------------------------\\
+
+/// @Mixin para hacer textos responsivos!!
+/// @Se puede hacer texto responsivo declarando un maximo y minimo de "font-size"
+/// @Y declarando desde que rangos debera cumplir esas medidas,
+/// @ademas de poder colocarle peso de fuente y tambien colocarle la "font-family"
+/// @cabe recalcar que incluso funcionara sin necesidad de colocar alguna medida en specifico!
+/// @NOTA: Da como resultado los valores en pixels!
+/// 
+/// @ejemplo
+///
+///     h2{
+///         @include texto(18min-pixels, 24max-pixels, bold, "Arial", 768min-viewport, 1024max-viewport);
+///     }
+/// 
+/// 
+/// 
+
+@mixin texto($min, $max, $weight: 400, $family: ff(1), $min-view: phone, $max-view: desk){
+
+	@include responsive(font-size, $min, $max, $min-view, $max-view);
+	font-weight: $weight;
+	font-family: $family;
+}
+
+@mixin fontNumbers(){
+	-moz-font-feature-settings: "lnum";
+	-webkit-font-feature-settings: "lnum";
+	font-feature-settings: "lnum";
+	font-variant: lining-nums;
+}
+
+@mixin firstLetter(){
+
+	&::first-letter{
+		text-transform: uppercase;
+	}
+}
+
+@mixin letterSpacing($track){
+	letter-spacing: calc(#{$track / 1000}em);
+}
+
+
+@mixin placeholder-input(){
+	&::-webkit-input-placeholder {
+	  	@content;
+	}
+
+	&:-ms-input-placeholder {
+	  	@content;
+	}
+
+	&::placeholder {
+	 	@content;
+	}
+}
+
+@mixin inputReset(){
+	-webkit-appearance: none;
+	border: none;
+	border-radius: 0;
+	background-color: unset;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+//------------------------------------------------------------------------------------\\
+//------------------------------------Grid Layout-------------------------------------\\
+//------------------------------------------------------------------------------------\\
+
+/// @Sistema para hacer un sistema de grillas
+/// @proporcional de las columnas que quieras con CSS GRID LAYOUT
+/// 
+/// @ejemplo
+///
+///     #container-back-img {
+///       @include grid-x-column(4, 30px, .clase-x); 
+///     }
+/// 
+
+@mixin grid($desk, $tablet: 2, $gap: 0px, $width: 1fr){
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	align-items: start;
+
+	grid-gap: $gap;
+
+	grid-template: 1fr / repeat($desk, $width);
+
+	@include tablet{
+		grid-template: 1fr / repeat($tablet, $width);
+	}
+	@include phone{
+		grid-template: 1fr / repeat(1, $width);
+	}
+
+}
+
+/// @Sistema para hacer un sistema de grillas
+/// @proporcional de las columnas que quieras con FLEX-BOX
+/// 
+/// @ejemplo
+///
+///     #container-back-img {
+///       @include grid-x-column(4, 30px, .clase-x); 
+///     }
+/// 
+
+@mixin gridFlex($columnasDesk, $columnasTablet: 2, $gap: 10px){
+	margin-right: calc(#{-$gap} / 2);
+	margin-left: calc(#{-$gap} / 2);
+	display: flex;
+	flex-wrap: wrap;
+	
+	> div {
+		width: calc((100% / #{$columnasDesk}) - #{$gap});
+		margin-right: calc(#{$gap} / 2);
+		margin-left: calc(#{$gap} / 2);
+		margin-bottom: #{$gap};
+
+		@include tablet{
+			width: calc((100% / #{$columnasTablet}) - #{$gap});
+		}
+
+		@include phone{
+			width: 100%;
+			margin-right: 0;
+			margin-left: 0;
+			margin-bottom: #{$gap / 2};
+		}
+	}
+}
+
+
+

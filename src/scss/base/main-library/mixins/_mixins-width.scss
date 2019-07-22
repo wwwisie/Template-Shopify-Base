@@ -1,0 +1,56 @@
+//--------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------Paddings-----------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+
+/// El contenedor tomara el ancho disponible en la fila!
+/// 
+/// @ejemplo
+/// 
+/// 	.class-1{
+/// 		@include resto-de-ancho;
+/// 	}
+/// 
+
+@mixin resto-de-ancho{
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+/// Crea un contenedor Responsivo siempre Centrado!
+/// 
+/// @ejemplo
+/// 
+/// 	.header{
+/// 		@include container("Aqui coloca el margen en pixeles/em/rem/porcentaje");
+/// 	}
+/// 
+
+@mixin container($m: 10){
+	width: calc(100% - #{remover-unidades($m)}px);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/// Crea el ancho y alto proporcional!
+/// 
+/// @ejemplo
+/// 
+/// 	.header{
+/// 		@include tamaño(50);
+/// 	}
+/// 
+
+@mixin cuadro($t: 0){
+	width: #{remover-unidades($t)}px;
+	height: #{remover-unidades($t)}px;
+}
+
+
+
+
+
+
+
+
+

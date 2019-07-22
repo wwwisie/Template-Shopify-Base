@@ -1,0 +1,106 @@
+{%- comment -%}
+  ATENCION!
+
+  Recuerda que en este archivo es donde se enlazan los archivos de estilo y script. En la parte inferior hay secciones predefinidas, pero puedes crear tus propias secciones si lo necesitas.
+
+  Las secciones predefinidas son:
+   *Global
+   *Homapage
+   *Collections
+   *Product
+   *Cart
+   *Footer
+
+   Los estilos y scripts se cargan progresivamente, osea que solo se carga lo necesario para la seccion que se esta mostrando.
+
+   En la seccion Global, se enlazan archivos que se ocuparan en todo el sitio y no en una seccion en especifico estos se deben cargar si o si para que funcione. Un ejemplo de como se enlazan los estilos y los scripts para una seccion en especifico, lo puedes ver en la seccion HOMEPAGE.
+
+   Dudas, aclaraciones... con @soycamis :D
+{%- endcomment -%}
+
+{%- comment -%}
+//==========================================================================\\
+GLOBAL
+\\==========================================================================//
+{%- endcomment -%}
+<!-- Global styles -->
+<link rel="stylesheet" href="{{ 'gm.base.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'gm.menu.css' | asset_url }}">
+
+<!-- Global scripts -->
+
+{%- comment -%}
+//==========================================================================\\
+HOMEPAGE
+\\==========================================================================//
+{%- endcomment -%}
+{% if template == 'index' %}
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ 'gm.homepage.cover.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'gm.homepage.fold-2.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'gm.homepage.fold-3.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'gm.homepage.fold-4.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'gm.homepage.fold-5.css' | asset_url }}">
+
+  <!-- Scripts -->
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'gm.index.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'gm.index.js' | asset_url }}"></script><![endif]-->
+{% endif %}
+
+{%- comment -%}
+//==========================================================================\\
+COLLECTIONS
+\\==========================================================================//
+{%- endcomment -%}
+{% if template == 'collection' %}
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ 'gm.collection.css' | asset_url }}">
+
+  <!-- Scripts -->
+{% endif %}
+
+{%- comment -%}
+//==========================================================================\\
+PRODUCT
+\\==========================================================================//
+{%- endcomment -%}
+{% if template == 'product' %}
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ 'gm.product.css' | asset_url }}">
+
+  <!-- Scripts -->
+{% endif %}
+
+{%- comment -%}
+//==========================================================================\\
+CART
+\\==========================================================================//
+{%- endcomment -%}
+{% if template == 'cart' %}
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ 'gm.cart.css' | asset_url }}">
+
+  <!-- Scripts -->
+{% endif %}
+
+{%- comment -%}
+//==========================================================================\\
+FOOTER
+\\==========================================================================//
+{%- endcomment -%}
+<!-- Styles -->
+<link rel="stylesheet" href="{{ 'gm.footer.css' | asset_url }}">
+
+<!-- Scripts -->
+
+{%- comment -%}
+//==========================================================================\\
+PASSWORD
+\\==========================================================================//
+{%- endcomment -%}
+{% if template == 'password' %}
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ 'gm.base.css' | asset_url }}">
+
+{% endif %}

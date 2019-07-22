@@ -1,0 +1,79 @@
+@charset "UTF-8"; 
+/* Esta notacion va antes que cualquier otra cosa
+Incluso antes de un comentario para que asi se pueda
+indicar la codificación de caracteres dentro de la 
+hoja de estilo CSS. */
+//--------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------COMPILADOR---------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+
+@import "variables/_tipografia.scss";
+@import "variables/_colores.scss";
+
+//-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
+
+@import "funciones/_coversiones.scss";
+@import "funciones/_colores.scss";
+@import "funciones/_texto.scss";
+@import "funciones/_trigonometria.scss";
+
+//-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
+
+@import "mixins/_mixins-hacks.scss"; //independiente
+@import "mixins/_mixins-media-querys.scss"; //independiente
+
+@import "mixins/_mixins-responsive.scss"; //media-query
+@import "mixins/_mixins-visibilidad.scss"; //media-query
+@import "mixins/_mixins-width.scss"; //media-query
+@import "mixins/_mixins-cssgrids.scss"; //media-query
+
+@import "mixins/_mixins-texto.scss"; //Responsive
+
+@import "mixins/_mixins-margins.scss"; //independiente
+@import "mixins/_mixins-paddings.scss"; //independiente
+@import "mixins/_mixins-img-responsive.scss"; //independiente
+@import "mixins/_mixins-figuras.scss"; //independiente
+
+//-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
+
+@import "libreria/_plugin-fullpage-2-9-7.scss"; //Plugin
+@import "libreria/_plugin-flickity.scss"; //Plugin
+
+//-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
+
+@import "animaciones/_configuraciones.scss";
+@import "animaciones/_fade.scss";
+@import "animaciones/_metamorfosis.scss";
+@import "animaciones/_rotar.scss";
+@import "animaciones/_translate.scss";
+
+//-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
+
+
+// // //-------------------------------------------------------------------
+// @import "modulos/";
+// // //-------------------------------------------------------------------
+// @import "modulos/";
+// // //-------------------------------------------------------------------
+// @import "modulos/";
+// // //-------------------------------------------------------------------
+// @import "modulos/";
+// // //-------------------------------------------------------------------
+// @import "modulos/";
+
+/*-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

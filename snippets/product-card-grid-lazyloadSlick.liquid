@@ -1,0 +1,16 @@
+<div>
+  <a href="{{ product.url }}">
+      <span class="visually-hidden">{{ product.title }}</span>
+      {% if lazyload %}
+        <img data-lazy="{{ product.featured_image | img_url: '300x', format: 'pjpg' }}" alt="{{ product.featured_image.alt }}">
+      {% else %}
+        <img src="{{ product.featured_image | img_url: '300x', format: 'pjpg' }}" alt="{{ product.featured_image.alt }}">
+      {% endif %}
+
+  </a>
+
+  <div class="h4 grid-view-item__title product-card__title" aria-hidden="true">{{ product.title }}</div>
+
+  {% include 'product-price', variant: product %}
+
+</div>

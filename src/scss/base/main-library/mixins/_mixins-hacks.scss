@@ -1,0 +1,46 @@
+//--------------------------------------------------------------------------------------------------------------
+//---------------------------------Hacks para Casos Especificos-------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+
+// https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+// https://css-tricks.com/snippets/css/css-hacks-targeting-firefox/
+// https://www.ryadel.com/en/css3-media-query-target-only-ie-ie6-ie11-firefox-chrome-safari-edge/#Safari_71
+
+@mixin onlyIpad(){
+	@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){ 
+		// Estilos para los ipads standars Ipad
+		@content;
+	}
+}
+
+@mixin onlyIOS(){
+	@supports (-webkit-overflow-scrolling: touch) {
+		// Estilos para Cualquier dispositivo IOS
+		@content;
+	}
+}
+
+@mixin notIOS(){
+	@supports not (-webkit-overflow-scrolling: touch) {
+	  	// Estilos para Cualquier dispositivo que no sea IOS 
+	  	@content;
+	}
+}
+
+@mixin onlyFirefox(){
+	@-moz-document url-prefix() { 
+		// Estilos unicamente para firefox
+		@content;
+	}
+}
+
+@mixin onlySafari(){
+	@media not all and (min-resolution:.001dpcm) { 
+	    @media {
+	    	// Estilos para Safari (10.1+)
+	        @content;
+	    }
+	}
+}
+
+
