@@ -3,9 +3,9 @@ $(document).ready(function(){
 	/**                                       Constantes                                          **/  
 	/**-------------------------------------------------------------------------------------------**/
 		
-		const $home = $(".back-home")
-		const $menu = $(".back-menu")
-		const $footer = $(".back-footer")
+		const $pageContainer = $("#PageContainer")
+		const $header = $("#shopify-section-header")
+		const $footer = $("#shopify-section-footer")
 
 	/**-------------------------------------------------------------------------------------------**/
 	/**                                          Menu                                             **/  
