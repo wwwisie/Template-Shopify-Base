@@ -58,8 +58,7 @@ gulp.task("scripts-default", function() {
     "./src/js/defaults/lazysizes.js",
     "./src/js/defaults/vendor.js",
     "./src/js/defaults/theme.js",
-    "./src/js/defaults/password.js",
-    "./src/js/defaults/plugins.js",
+    "./src/js/defaults/password.js"
   ])
   .pipe(concat("gm.base.min.js"))
   .pipe(uglify())

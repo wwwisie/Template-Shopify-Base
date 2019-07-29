@@ -1,0 +1,110 @@
+
+<div class="Cover-wrapper">
+  <div class="img-container">
+    {% 
+      include "setBackImage", 
+      image: section.settings.image
+    %}
+    {% 
+      include "setBackImage", 
+      image: section.settings.image_mobile, 
+      inMobile: true 
+    %}
+  </div>
+  
+  <div class="info-cover">
+    <div class="titulo">
+      <h2>{{ section.settings.title | escape }}</h2>
+    </div>
+
+    <div class="descripcion">
+      <p>{{ section.settings.description }}</p>
+    </div>
+
+    <div class="btn-cover">
+      <a href="{{ section.settings.button_link }}">
+        <p>{{ section.settings.button_text | escape }}</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Cover with Text",
+    "es": "Cover con Texto"
+  },
+  "class": "cover-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": {
+        "en": "Image Desktop",
+        "es": "Imagen de Escritorio"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": {
+        "en": "Image Mobile",
+        "es": "Imagen de Mobile"
+      }
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Heading",
+        "es": "Título"
+      },
+      "default": {
+        "en": "Heading of Section",
+        "es": "Titulo de la Seccion"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": {
+        "en": "Text",
+        "es": "Texto"
+      },
+      "default": {
+        "en": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.</p>",
+        "es": "<p>Usa el texto superpuesto para darles información a tus clientes sobre tu marca. Selecciona imágenes y textos que se relacionen con tu estilo e historia.</p>"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": {
+        "en": "Button text",
+        "es": "Texto del botón"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": {
+        "en": "Button link",
+        "es": "Enlace de botón"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Cover with Text",
+        "es": "Cover con Texto"
+      },
+      "category": {
+        "en": "Cover",
+        "es": "Cover"
+      }
+    }
+  ]
+}
+{% endschema %}

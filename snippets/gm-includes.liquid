@@ -1,15 +1,18 @@
 {%- comment -%}
   ATENCION!
 
-  Recuerda que en este archivo es donde se enlazan los archivos de estilo y script. En la parte inferior hay secciones predefinidas, pero puedes crear tus propias secciones si lo necesitas.
+  Recuerda que en este archivo es donde se enlazan los archivos de estilos y script. En la parte inferior hay secciones predefinidas, pero puedes crear tus propias secciones si lo necesitas.
 
   Las secciones predefinidas son:
    *Global
    *Homapage
    *Collections
    *Product
+   *Password
    *Cart
-   *Footer
+   *Pages
+   *Contact
+   *Search
 
    Los estilos y scripts se cargan progresivamente, osea que solo se carga lo necesario para la seccion que se esta mostrando.
 
@@ -23,11 +26,16 @@
 GLOBAL
 \\==========================================================================//
 {%- endcomment -%}
-<!-- Global styles -->
-<link rel="stylesheet" href="{{ 'gm.base.css' | asset_url }}">
-<link rel="stylesheet" href="{{ 'gm.menu.css' | asset_url }}">
 
-<!-- Global scripts -->
+  <!-- Global styles -->
+    <link rel="stylesheet" href="{{ 'gm.base.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.menu.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.footer.css' | asset_url }}">
+
+  <!-- Global scripts -->
+    <script src="{{ 'gm.plugins.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'gm.menu.js' | asset_url }}" defer="defer"></script>
+
 
 {%- comment -%}
 //==========================================================================\\
@@ -35,17 +43,22 @@ HOMEPAGE
 \\==========================================================================//
 {%- endcomment -%}
 {% if template == 'index' %}
+
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ 'gm.homepage.cover.css' | asset_url }}">
-  <link rel="stylesheet" href="{{ 'gm.homepage.fold-2.css' | asset_url }}">
-  <link rel="stylesheet" href="{{ 'gm.homepage.fold-3.css' | asset_url }}">
-  <link rel="stylesheet" href="{{ 'gm.homepage.fold-4.css' | asset_url }}">
-  <link rel="stylesheet" href="{{ 'gm.homepage.fold-5.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.homepage.cover.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.homepage.fold-2.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.homepage.fold-3.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.homepage.fold-4.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.homepage.fold-5.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.homepage.fold-6.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.homepage.fold-7.css' | asset_url }}">
 
   <!-- Scripts -->
-  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'gm.index.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
-  <!--[if lte IE 9]><script src="{{ 'gm.index.js' | asset_url }}"></script><![endif]-->
+    <script src="{{ 'gm.index.js' | asset_url }}" defer="defer"></script>
+
+
 {% endif %}
+
 
 {%- comment -%}
 //==========================================================================\\
@@ -53,11 +66,14 @@ COLLECTIONS
 \\==========================================================================//
 {%- endcomment -%}
 {% if template == 'collection' %}
+
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ 'gm.collection.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.collection.css' | asset_url }}">
 
   <!-- Scripts -->
+
 {% endif %}
+
 
 {%- comment -%}
 //==========================================================================\\
@@ -65,11 +81,14 @@ PRODUCT
 \\==========================================================================//
 {%- endcomment -%}
 {% if template == 'product' %}
+
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ 'gm.product.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.product.css' | asset_url }}">
 
   <!-- Scripts -->
+
 {% endif %}
+
 
 {%- comment -%}
 //==========================================================================\\
@@ -77,21 +96,14 @@ CART
 \\==========================================================================//
 {%- endcomment -%}
 {% if template == 'cart' %}
+
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ 'gm.cart.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.cart.css' | asset_url }}">
 
   <!-- Scripts -->
+
 {% endif %}
 
-{%- comment -%}
-//==========================================================================\\
-FOOTER
-\\==========================================================================//
-{%- endcomment -%}
-<!-- Styles -->
-<link rel="stylesheet" href="{{ 'gm.footer.css' | asset_url }}">
-
-<!-- Scripts -->
 
 {%- comment -%}
 //==========================================================================\\
@@ -101,6 +113,55 @@ PASSWORD
 {% if template == 'password' %}
 
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ 'gm.base.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'gm.base.css' | asset_url }}">
+
+  <!-- Scripts -->
 
 {% endif %}
+
+
+{%- comment -%}
+//==========================================================================\\
+Pages
+\\==========================================================================//
+{%- endcomment -%}
+{% if template == 'page' %}
+
+  <!-- Styles -->
+    <link rel="stylesheet" href="{{ 'gm.pages.css' | asset_url }}">
+
+  <!-- Scripts -->
+
+{% endif %}
+
+
+{%- comment -%}
+//==========================================================================\\
+Contact
+\\==========================================================================//
+{%- endcomment -%}
+{% if template == 'page.contact' %}
+
+  <!-- Styles -->
+    <link rel="stylesheet" href="{{ 'gm.contact.css' | asset_url }}">
+
+  <!-- Scripts -->
+
+{% endif %}
+
+
+{%- comment -%}
+//==========================================================================\\
+Search
+\\==========================================================================//
+{%- endcomment -%}
+{% if template == 'search' %}
+
+  <!-- Styles -->
+    <link rel="stylesheet" href="{{ 'gm.search.css' | asset_url }}">
+
+  <!-- Scripts -->
+
+{% endif %}
+
+

@@ -11,39 +11,27 @@
 ///     }
 /// 
 
-@mixin back-img($back: null) {
+@mixin back-img($classBack: null) {
     width          : 100%;
     height         : 0;
     overflow       : hidden;
     padding-bottom : 56.25%;
     position       : relative;
 
-    @if ($back != null){
-      @if $back == imgTag{
-        > img{
-            position    : absolute;
-            top         : 0;
-            left        : 0;
-            width       : 100%;
-            height      : 100%;
-            object-fit  : cover;
-        }
-      }
-      @else{
-        .#{$back} {
-            position : absolute;
-            top      : 0;
-            left     : 0;
-            width    : 100%;
-            height   : 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+    @if ($classBack != null){
+      .#{$classBack} {
+          position : absolute;
+          top      : 0;
+          left     : 0;
+          width    : 100%;
+          height   : 100%;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
       }
     } 
     @else {
-      > .img-post,
+      > .back-img,
         iframe,
         video{
           position : absolute;
@@ -63,7 +51,7 @@
 /// 
 /// @ejemplo
 /// 
-///     .img {
+///     img {
 ///       @include img;
 ///     }
 /// 

@@ -1,0 +1,4 @@
+<picture>
+    <source srcset="{{ imgUrl }}" type="image/{{ imgType }}"/>
+    <img src="{{ imgUrl | img_url: "master", format: 'pjpg' }}" alt="image">
+</picture>

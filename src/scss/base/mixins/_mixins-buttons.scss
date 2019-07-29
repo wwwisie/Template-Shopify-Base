@@ -1,0 +1,67 @@
+//------------------------------------------------------------------------------------\\
+//------------------------------------Mixin Button------------------------------------\\
+//------------------------------------------------------------------------------------\\
+
+/// @Mixin Para dar estilos a los botones Generales
+/// 
+/// @ejemplo
+///
+///     .btn--secondary {
+///       @include btn("secundario")
+///     }
+/// 
+
+@mixin btn($type){
+	@include inputReset;
+	padding: 19px 69px;
+
+	font-family: ff(2);
+	font-size: 16px;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 1.6px;
+	text-align: center;
+	color: $white;
+	min-width: 289px;
+	@include center-flex;
+
+	@include hasta(750){
+		padding: 15px 46px;
+		font-size: 14px;
+		letter-spacing: 1.4px;
+	}
+
+	@if ($type == "principal"){
+		background-color: $azulBase;
+		&:hover{
+			color: $white;
+			background-color: $azulHoverBase !important;
+		}
+	}
+	@if ($type == "secundario"){
+		background-color: $grisBase;
+		&:hover{
+			color: $white;
+			background-color: $grisHoverBase !important;
+		}
+	}
+
+	span, p{
+		font-family: ff(2);
+		font-size: 16px;
+		font-weight: 500;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 1.6px;
+		text-align: center;
+		color: $white;
+
+		@include hasta(750){
+			font-size: 14px;
+			letter-spacing: 1.4px;
+		}
+	}
+}

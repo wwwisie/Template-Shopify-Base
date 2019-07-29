@@ -41,13 +41,13 @@
 ///     }
 /// 
 
-@mixin gridFlex($columnasDesk, $columnasTablet: 2, $gap: 10px){
+@mixin gridFlex($columnasDesk, $columnasTablet: 2, $gap: 10px, $children: div){
 	margin-right: calc(#{-$gap} / 2);
 	margin-left: calc(#{-$gap} / 2);
 	display: flex;
 	flex-wrap: wrap;
 	
-	> div {
+	> #{$children} {
 		width: calc((100% / #{$columnasDesk}) - #{$gap});
 		margin-right: calc(#{$gap} / 2);
 		margin-left: calc(#{$gap} / 2);
