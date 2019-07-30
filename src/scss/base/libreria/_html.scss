@@ -11,6 +11,8 @@
     scrollbar-width: none; //firefox compatibility
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch; // scroll smooth Safari
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     outline: 0;
 }
 
@@ -19,8 +21,6 @@ html, body{
     font-size: 16px;
     
     scroll-behavior: smooth; //scroll suavizado para anclas
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 a{

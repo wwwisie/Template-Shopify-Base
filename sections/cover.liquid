@@ -1,32 +1,53 @@
 
-<div class="Cover-wrapper">
-  <div class="img-container">
-    {% 
-      include "setBackImage", 
-      image: section.settings.image
-    %}
-    {% 
-      include "setBackImage", 
-      image: section.settings.image_mobile, 
-      inMobile: true 
-    %}
-  </div>
+<div class="cover-wrapper">
+    <div class="img-container">
+        {% 
+            include "setBackImage", 
+            image: section.settings.image
+        %}
+        {% 
+            include "setBackImage", 
+            image: section.settings.image_mobile, 
+            inMobile: true 
+        %}
+    </div>
+
+    {% if section.settings.format_info == "libre" %}
+        <div class="info-cover-libre">
+            <div class="titulo">
+                <h2>{{ section.settings.title | escape }}</h2>
+            </div>
+
+            <div class="descripcion">
+                <p>{{ section.settings.description }}</p>
+            </div>
+
+            <div class="btn-cover">
+                <a href="{{ section.settings.button_link }}">
+                    <p>{{ section.settings.button_text | escape }}</p>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if section.settings.format_info == "caja" %}
+        <div class="info-cover-caja">
+            <div class="titulo">
+                <h2>{{ section.settings.title | escape }}</h2>
+            </div>
+
+            <div class="descripcion">
+                <p>{{ section.settings.description }}</p>
+            </div>
+
+            <div class="btn-cover">
+                <a href="{{ section.settings.button_link }}">
+                    <p>{{ section.settings.button_text | escape }}</p>
+                </a>
+            </div>
+        </div>
+    {% endif %}
   
-  <div class="info-cover">
-    <div class="titulo">
-      <h2>{{ section.settings.title | escape }}</h2>
-    </div>
-
-    <div class="descripcion">
-      <p>{{ section.settings.description }}</p>
-    </div>
-
-    <div class="btn-cover">
-      <a href="{{ section.settings.button_link }}">
-        <p>{{ section.settings.button_text | escape }}</p>
-      </a>
-    </div>
-  </div>
 </div>
 
 {% schema %}
@@ -37,6 +58,31 @@
   },
   "class": "cover-section",
   "settings": [
+  {
+      "type": "select",
+      "id": "format_info",
+      "label": {
+        "en": "Type info",
+        "es": "Tipo de Info"
+      },
+      "default": "libre",
+      "options": [
+        {
+          "value": "caja",
+          "label": {
+            "en": "In Box",
+            "es": "En caja"
+          }
+        },
+        {
+          "value": "libre",
+          "label": {
+            "en": "Free",
+            "es": "Libre"
+          }
+        }
+      ]
+    },
     {
       "type": "image_picker",
       "id": "image",
@@ -83,6 +129,10 @@
       "label": {
         "en": "Button text",
         "es": "Texto del botón"
+      },
+      "default": {
+        "en": "Buy now",
+        "es": "Comprar Ahora"
       }
     },
     {

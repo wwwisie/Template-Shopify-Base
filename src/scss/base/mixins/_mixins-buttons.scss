@@ -13,55 +13,92 @@
 
 @mixin btn($type){
 	@include inputReset;
-	padding: 19px 69px;
+	padding: 15px 40px;
 
-	font-family: ff(2);
+	font-family: ff(1);
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: normal;
 	font-style: normal;
 	font-stretch: normal;
-	line-height: normal;
-	letter-spacing: 1.6px;
+	line-height: 0000;
 	text-align: center;
+	letter-spacing: 0000px;
 	color: $white;
-	min-width: 289px;
-	@include center-flex;
+	display: inline-block;
+	width: auto;
 
 	@include hasta(750){
-		padding: 15px 46px;
+		padding: 10px 30px;
 		font-size: 14px;
-		letter-spacing: 1.4px;
+		letter-spacing: 000px;
+		line-height: 0000;
 	}
 
-	@if ($type == "principal"){
-		background-color: $azulBase;
+	@if ($type == "primario"){
+		background-color: $colorBase;
 		&:hover{
-			color: $white;
-			background-color: $azulHoverBase !important;
+			background-color: $colorHoverBase !important;
 		}
 	}
 	@if ($type == "secundario"){
 		background-color: $grisBase;
 		&:hover{
-			color: $white;
 			background-color: $grisHoverBase !important;
+		}
+	}
+	@if ($type == "primario-border"){
+		background-color: rgba($white, 0);
+		border: 1px solid $colorBase;
+
+		color: $colorBase;
+		span, p{
+			color: $colorBase;
+		}
+		&:hover{
+			background-color: rgba($white, 0);
+			border: 1px solid $colorHoverBase;
+
+			color: $colorHoverBase;
+			span, p{
+				color: $colorHoverBase;
+			}
+		}
+	}
+	@if ($type == "secundario-border"){
+		background-color: rgba($white, 0);
+		border: 1px solid $grisBase;
+		
+		color: $grisBase;
+		span, p{
+			color: $grisBase;
+		}
+		&:hover{
+			background-color: rgba($white, 0);
+			border: 1px solid $grisHoverBase;
+
+			color: $grisHoverBase;
+			span, p{
+				color: $grisHoverBase;
+			}
 		}
 	}
 
 	span, p{
-		font-family: ff(2);
+		font-family: ff(1);
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: normal;
 		font-style: normal;
 		font-stretch: normal;
-		line-height: normal;
-		letter-spacing: 1.6px;
+		line-height: 0000;
 		text-align: center;
+		letter-spacing: 0000px;
 		color: $white;
+		display: inline-block;
 
 		@include hasta(750){
 			font-size: 14px;
-			letter-spacing: 1.4px;
+			letter-spacing: 000px;
+			line-height: 0000;
 		}
 	}
 }
