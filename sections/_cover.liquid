@@ -1,4 +1,12 @@
 
+{% if section.settings.format_info == "left" %}
+    {% assign classInfo = "left" %}
+{% endif %}
+{% if section.settings.format_info == "center" %}
+    {% assign classInfo = "center" %}
+{% endif %}
+
+
 <div class="cover-wrapper">
     <div class="img-container">
         {% 
@@ -12,41 +20,21 @@
         %}
     </div>
 
-    {% if section.settings.format_info == "libre" %}
-        <div class="info-cover-libre">
-            <div class="titulo">
-                <h2>{{ section.settings.title | escape }}</h2>
-            </div>
-
-            <div class="descripcion">
-                <p>{{ section.settings.description }}</p>
-            </div>
-
-            <div class="btn-cover">
-                <a href="{{ section.settings.button_link }}">
-                    <p>{{ section.settings.button_text | escape }}</p>
-                </a>
-            </div>
+    <div class="info-cover-{{ classInfo }}">
+        <div class="titulo">
+            <h2>{{ section.settings.title | escape }}</h2>
         </div>
-    {% endif %}
 
-    {% if section.settings.format_info == "caja" %}
-        <div class="info-cover-caja">
-            <div class="titulo">
-                <h2>{{ section.settings.title | escape }}</h2>
-            </div>
-
-            <div class="descripcion">
-                <p>{{ section.settings.description }}</p>
-            </div>
-
-            <div class="btn-cover">
-                <a href="{{ section.settings.button_link }}">
-                    <p>{{ section.settings.button_text | escape }}</p>
-                </a>
-            </div>
+        <div class="descripcion">
+            <p>{{ section.settings.description }}</p>
         </div>
-    {% endif %}
+
+        <div class="btn-cover">
+            <a href="{{ section.settings.button_link }}">
+                <p>{{ section.settings.button_text | escape }}</p>
+            </a>
+        </div>
+    </div>
   
 </div>
 
@@ -56,7 +44,7 @@
     "en": "Cover with Text",
     "es": "Cover con Texto"
   },
-  "class": "cover-section",
+  "class": "section-cover",
   "settings": [
   {
       "type": "select",
@@ -65,20 +53,20 @@
         "en": "Type info",
         "es": "Tipo de Info"
       },
-      "default": "libre",
+      "default": "left",
       "options": [
         {
-          "value": "caja",
+          "value": "center",
           "label": {
-            "en": "In Box",
-            "es": "En caja"
+            "en": "Center",
+            "es": "Centrado"
           }
         },
         {
-          "value": "libre",
+          "value": "left",
           "label": {
-            "en": "Free",
-            "es": "Libre"
+            "en": "Left",
+            "es": "Izquierda"
           }
         }
       ]

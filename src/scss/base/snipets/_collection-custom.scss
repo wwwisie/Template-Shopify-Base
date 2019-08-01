@@ -1,0 +1,44 @@
+
+@mixin collection-custom(){
+	.coleccion-custom{
+		.grid-coleccion{
+			margin-bottom: 86px;
+			@include grid(4,2, 30px);
+			
+			.item{
+				.img-container{
+					margin-bottom: 20px;
+					height: 154px;
+					@include center-flex;
+					img{
+						max-height: 100%;
+					}
+				}
+
+				.titulo{
+					margin-bottom: 6px;
+					h3{
+						font-family: ff(2);
+						font-size: 16px;
+						font-weight: bold;
+						font-style: normal;
+						font-stretch: normal;
+						line-height: normal;
+						letter-spacing: normal;
+						text-align: center;
+						color: $black;
+					}
+				}
+			}
+		}
+		
+		.btn-coleccion{
+			@include center-flex;
+			a{
+				text-transform: uppercase;
+				@include btn("principal");
+				width: 269px;
+			}
+		}
+	}
+}

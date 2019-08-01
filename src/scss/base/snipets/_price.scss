@@ -1,0 +1,75 @@
+
+@mixin product-price(){
+	.precio-producto{
+		.titulo-vendor{
+			margin-bottom: 8px;
+			h3{
+				font-family: ff(1);
+				font-size: 12px;
+				font-weight: normal;
+				font-style: normal;
+				font-stretch: normal;
+				line-height: normal;
+				letter-spacing: normal;
+				text-align: center;
+				color: $black;
+			}
+		}
+
+		&.precio-en-oferta{
+			.precios{
+				.cantidades{
+					.precio-regular{
+						margin-right: 5px;
+						span{
+							text-decoration: line-through;
+							color: rgba($black, 0.4);
+						}
+					}
+				}
+			}
+		}
+		
+		.precios{
+			.cantidades{
+				width: 100%;
+				@include center-flex;
+
+				span{
+					font-family: ff(1);
+					font-size: 12px;
+					font-weight: normal;
+					font-style: normal;
+					font-stretch: normal;
+					line-height: normal;
+					letter-spacing: normal;
+					color: $black;
+				}
+
+				.precio-regular{
+					
+				}
+
+				.precio-oferta{
+					span{
+						color: $azul;
+					}
+				}
+			}
+			.itemAgotado{
+				p{
+					font-family: ff(1);
+					font-size: 12px;
+					font-weight: normal;
+					font-style: normal;
+					font-stretch: normal;
+					line-height: normal;
+					letter-spacing: normal;
+					text-align: center;
+					text-transform: uppercase;
+					color: $red;
+				}
+			}
+		}
+	}
+}

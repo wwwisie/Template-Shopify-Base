@@ -1,0 +1,47 @@
+<div class="collections-tabs">
+    <div class="menu-tabs">
+        <ul>
+            <li class="active">
+                <p>collections[nameColection].title</p>
+            </li>
+            <li >
+                <p>collections[nameColection].title</p>
+            </li>
+            <li>
+                <p>collections[nameColection].title</p>
+            </li>
+            <li>
+                <p>collections[nameColection].title</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="colecciones">
+        {% include 'collection-custom', nameColection: 'miopia-e-hipermetropia', class: "visible" %}
+        {% include 'collection-custom', nameColection: 'astigmatismo' %}
+        {% include 'collection-custom', nameColection: 'presbicia' %}
+        {% include 'collection-custom', nameColection: 'cosmeticos' %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": {
+    "en": "collections Tabs",
+    "es": "Coleccion con Tabs"
+  },
+  "presets": [
+    {
+      "name": {
+        "en": "Collections in Tabs",
+        "es": "Colecciónes en Tabs"
+      },
+      "category": {
+        "en": "Collection",
+        "es": "Colección"
+      }
+    }
+  ]
+}
+{% endschema %}

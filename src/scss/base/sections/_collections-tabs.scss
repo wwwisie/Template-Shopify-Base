@@ -1,0 +1,58 @@
+@mixin collections-tabs(){
+	.collections-tabs{
+		width: calc(100% - 60px);
+		@include margin-h(auto);
+		@include margin-v(40);
+		
+		@include tablet{
+			width: calc(100% - 30px);
+		}
+		@include phone{
+			width: calc(100% - 15px);
+		}
+
+		.menu-tabs{
+			padding: 15px 0;
+			border-bottom: 1px solid rgb($black, 0.6);
+			margin-bottom: 30px;
+			ul{
+				@include center-flex;
+				li{
+					cursor: pointer;
+					margin-right: 20px;
+					@include ultimo{
+						margin-right: 0;
+					}
+
+					@include hasta(1000){
+						margin-right: 20px;
+					}
+
+					&:hover,
+					&.active{
+						p{
+							font-weight: 700;
+						}
+					}
+
+
+					p{
+						font-family: ff(1);
+						font-size: 16px;
+						font-weight: normal;
+						font-style: normal;
+						font-stretch: normal;
+						line-height: normal;
+						letter-spacing: normal;
+						color: $black;
+					}
+				}
+			}
+		}
+
+		.colecciones{
+			
+			@include collection-custom;
+		}
+	}
+}
