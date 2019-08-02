@@ -1,0 +1,13 @@
+<div class="grid-item-coleccion">
+    <a href="{{ product.url }}">
+        <div class="img-container">
+            <img src="{{ product.featured_image | img_url: 'master', format: 'pjpg' }}" alt="{{ product.featured_image.alt }}">
+        </div>
+    </a>
+
+    <div class="titulo">
+        <h3>{{ product.title }}</h3>
+    </div>
+
+   {% include 'product-price-custom', variant: product %}
+</div>

@@ -28,7 +28,7 @@ hoja de estilo CSS. */
 @import "mixins/_mixins-cssgrids.scss"; //media-query
 
 @import "mixins/_mixins-texto.scss"; //Responsive
-@import "mixins/_mixins-buttons.scss"; //media-query y texto
+@import "mixins/_mixins-button.scss"; //media-query y texto
 
 @import "mixins/_mixins-margins.scss"; //independiente
 @import "mixins/_mixins-paddings.scss"; //independiente
@@ -50,13 +50,16 @@ hoja de estilo CSS. */
 
 //-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
 
-@import "sections/_cover.scss";
-@import "sections/_collections-tabs.scss";
+@import "snipets/_precio-producto.scss";
+@import "snipets/_grid-item-coleccion.scss";
+@import "snipets/_collection-custom.scss";
 
 //-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
 
-@import "snipets/_price.scss";
-@import "snipets/_collection-custom.scss";
+@import "sections/_cover.scss";
+@import "sections/_coleccion-destacada.scss";
+@import "sections/_colecciones-destacadas.scss";
+@import "sections/_colecciones-destacadas-tabs.scss";
 
 //-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
 

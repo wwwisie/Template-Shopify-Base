@@ -20,18 +20,38 @@
 	font-weight: normal;
 	font-style: normal;
 	font-stretch: normal;
-	line-height: 0000;
+	line-height: normal;
 	text-align: center;
-	letter-spacing: 0000px;
+	letter-spacing: normal;
 	color: $white;
 	display: inline-block;
 	width: auto;
 
+	span, p{
+		font-family: ff(1);
+		font-size: 16px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		text-align: center;
+		letter-spacing: normal;
+		color: $white;
+		display: inline-block;
+		width: auto;
+
+		@include hasta(750){
+			font-size: 14px;
+			letter-spacing: normal;
+			line-height: normal;
+		}
+	}
+
 	@include hasta(750){
 		padding: 10px 30px;
 		font-size: 14px;
-		letter-spacing: 000px;
-		line-height: 0000;
+		letter-spacing: normal;
+		line-height: normal;
 	}
 
 	@if ($type == "primario"){
@@ -80,25 +100,6 @@
 			span, p{
 				color: $grisHoverBase;
 			}
-		}
-	}
-
-	span, p{
-		font-family: ff(1);
-		font-size: 16px;
-		font-weight: normal;
-		font-style: normal;
-		font-stretch: normal;
-		line-height: 0000;
-		text-align: center;
-		letter-spacing: 0000px;
-		color: $white;
-		display: inline-block;
-
-		@include hasta(750){
-			font-size: 14px;
-			letter-spacing: 000px;
-			line-height: 0000;
 		}
 	}
 }

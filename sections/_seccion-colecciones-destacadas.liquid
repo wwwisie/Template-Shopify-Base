@@ -1,0 +1,64 @@
+<div class="colecciones-destacadas">
+
+	{% if section.settings.section_title != blank %}
+	    <div class="titulo-seccion">
+	      	<h2>{{ section.settings.section_title | escape }}</h2>
+	    </div>
+	{% endif %}
+
+	<div class="grid-colecciones">
+		{% for block in section.blocks limit: section.blocks.size %}
+			{%- assign collection = collections[block.settings.collection] -%}
+			{% include "grid-item-colecciones" %}
+    {% endfor %}
+	</div>
+
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Featured Collections",
+    "es": "Colecciones Destacadas"
+  },
+  "class": "seccion-colecciones-destacadas",
+  "settings": [
+  	{
+      "type": "text",
+      "id": "section_title",
+      "label": {
+        "en": "Heading",
+        "es": "Título"
+      },
+      "default": {
+        "en": "Featured Collections",
+    	"es": "Colecciones Destacadas"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": {
+        "en": "Show product vendors",
+        "es": "Mostrar proveedores del producto"
+      },
+      "default": false
+    }
+  ],
+  "blocks": [
+
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Featured Collections",
+		"es": "Colecciones Destacadas"
+      },
+      "category": {
+        "en": "Collection",
+        "es": "Colección"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,4 +1,17 @@
-<!-- snippet/product-price-custom.liquid -->
+<!-- snippet/precio-producto.liquid -->
+{% comment %}
+
+:::: INCLUIDO EN ::::
+
+    sections-->
+
+    snipets-->
+        _grid-coleccion-item.liquid
+
+{% endcomment %}
+
+
+
 {% if variant.title %}
   {%- assign precioComparado = variant.compare_at_price -%}
   {%- assign precioItem = variant.price -%}
@@ -11,9 +24,11 @@
 
 <div class="precio-producto{% if precioComparado > precioItem %} precio-en-oferta{% endif %}{% if disponible %} sinStock{% endif %}" data-price>
   
-    <div class="titulo-vendor">
-        <p>{{ product.vendor }}</p>
-    </div>
+    {% if section.settings.show_vendor %}
+        <div class="titulo-vendor">
+            <p>{{ product.vendor }}</p>
+        </div>
+    {% endif %}
 
     <div class="precios">
         <div class="cantidades">

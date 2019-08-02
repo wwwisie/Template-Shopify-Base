@@ -1,4 +1,4 @@
-<div class="collections-tabs">
+<div class="colecciones-destacadas-tabs">
     <div class="menu-tabs">
         <ul>
             <li class="active">
@@ -17,10 +17,10 @@
     </div>
 
     <div class="colecciones">
-        {% include 'collection-custom', nameColection: 'miopia-e-hipermetropia', class: "visible" %}
-        {% include 'collection-custom', nameColection: 'astigmatismo' %}
-        {% include 'collection-custom', nameColection: 'presbicia' %}
-        {% include 'collection-custom', nameColection: 'cosmeticos' %}
+        {% include 'collection-custom', nameColection: 'nameColection', class: "active" %}
+        {% include 'collection-custom', nameColection: 'nameColection' %}
+        {% include 'collection-custom', nameColection: 'nameColection' %}
+        {% include 'collection-custom', nameColection: 'nameColection' %}
     </div>
 </div>
 
@@ -28,9 +28,21 @@
 {% schema %}
 {
   "name": {
-    "en": "collections Tabs",
-    "es": "Coleccion con Tabs"
+    "en": "Collections in Tabs",
+    "es": "Colecciones en Tabs"
   },
+  "class": "seccion-colecciones-destacadas-tabs",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": {
+        "en": "Show product vendors",
+        "es": "Mostrar proveedores del producto"
+      },
+      "default": false
+    }
+  ],
   "presets": [
     {
       "name": {

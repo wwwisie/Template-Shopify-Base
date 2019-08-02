@@ -1,0 +1,113 @@
+{%
+	assign collection = collections[section.settings.select_collection].products
+	assign products = collection.products
+	assign product_limit = section.settings.columns | times: section.settings.rows
+%}
+
+<div class="coleccion-destacada">
+
+  {% if section.settings.section_title != blank %}
+      <div class="titulo-seccion">
+        <h2>{{ section.settings.section_title | escape }}</h2>
+      </div>
+  {% endif %}
+
+	<div class="grid-coleccion">
+		{% for product in products limit: product_limit %}
+			{% include "section-coleccion-item"%}
+		{% endfor %}
+	</div>
+
+	{% if section.settings.show_btn_view_all %}
+		<div class="btn-coleccion">
+        <a href="{{ collection.url }}">Ver Todos</a>
+    </div>
+	{% endif %}
+	
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Featured collection",
+    "es": "Colección destacada
+  },
+  "class": "seccion-coleccion-destacada",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": {
+        "en": "Heading",
+        "es": "Título"
+      },
+      "default": {
+        "en": "Featured collection",
+        "es": "Colección destacada"
+      }
+    },
+    {
+      "id": "select_collection",
+      "type": "collection",
+      "label": {
+        "en": "Collection",
+        "es": "Colección"
+      }
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": {
+        "en": "Products per row",
+        "es": "Productos por fila"
+      },
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": {
+        "en": "Rows",
+        "es": "Filas"
+      },
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": {
+        "en": "Show product vendors",
+        "es": "Mostrar proveedores del producto"
+      },
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_btn_view_all",
+      "label": {
+        "en": "Show 'View all' button",
+        "es": "Mostrar el botón 'Ver todo'"
+      },
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Featured collection",
+        "es": "Colección destacada"
+      },
+      "category": {
+        "en": "Collection",
+        "es": "Colección"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -2,27 +2,28 @@
 //-------------------------------------------------CONTENIDO----------------------------------------------------
 //--------------------------------------------------------------------------------------------------------------
 
-.container{
-	$marginContainer: 40px;
-	$container: $marginContainer * 2;
-	$container-tablet: $container / 2;
-	$container-phone: $container / 4;
-	$w: 1400px;
+@mixin wrapper($margin: 60px, $maxWidth: 1400px){
+
+	$wrapperMarginContainer: #{remover-unidades($margin)}px;
+	$wrapperContainer: $wrapperMarginContainer * 2;
+	$wrapperContainerTablet: $wrapperContainer / 2;
+	$wrapperContainerPhone: $wrapperContainer / 4;
+	$wrapperWidth: #{remover-unidades($maxWidth)}px;
 	
-	width: $w;
+	width: $wrapperWidth;
 	margin-left: auto;
 	margin-right: auto;
 
-	@include hasta($w + $container){
-		@include container($container);
+	@include hasta($wrapperWidth + $wrapperContainer){
+		@include container($wrapperContainer);
 	}
 
 	@include tablet{
-		@include container($container-tablet);
+		@include container($wrapperContainerTablet);
 	}
 
 	@include phone{
-		@include container($container-phone);
+		@include container($wrapperContainerPhone);
 	}
 }
 

@@ -1,0 +1,27 @@
+
+@mixin coleccion-destacada(){
+	.coleccion-destacada{
+		@include wrapper;
+		@include padding-v(40);
+
+		.titulo-seccion{
+			margin-bottom: 20px;
+			h2{
+				@include titulo-seccion;
+			}
+		}
+
+		.grid-coleccion{
+			margin-bottom: 40px;
+			@include grid(4,2, 25px);
+
+			@include grid-item-coleccion;
+		}
+
+		.btn-coleccion{
+			a{
+				@include btn("principal");
+			}
+		}
+	}
+}

@@ -2920,7 +2920,6 @@ input,textarea {
 }
 
 .page-container {
-  transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
   position: relative;
   overflow: hidden
 }
@@ -3115,7 +3114,6 @@ hr {
   height: 100%;
   background-color: rgba(0,0,0,0.6);
   z-index: 8;
-  transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1)
 }
 
 .js-drawer-open .drawer-page-content::after {
