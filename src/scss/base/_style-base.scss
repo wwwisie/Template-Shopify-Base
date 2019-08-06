@@ -28,7 +28,7 @@ hoja de estilo CSS. */
 @import "mixins/_mixins-cssgrids.scss"; //media-query
 
 @import "mixins/_mixins-texto.scss"; //Responsive
-@import "mixins/_mixins-button.scss"; //media-query y texto
+@import "mixins/_mixins-button.scss"; //Media-query y Texto
 
 @import "mixins/_mixins-margins.scss"; //independiente
 @import "mixins/_mixins-paddings.scss"; //independiente
@@ -37,16 +37,15 @@ hoja de estilo CSS. */
 
 //-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
 
-@import "libreria/_plugin-fullpage-2-9-7.scss"; //Plugin
-@import "libreria/_plugin-flickity.scss"; //Plugin
-
-//-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
-
 @import "animaciones/_configuraciones.scss";
 @import "animaciones/_fade.scss";
 @import "animaciones/_metamorfosis.scss";
 @import "animaciones/_rotar.scss";
 @import "animaciones/_translate.scss";
+
+//-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
+
+@import "libreria/_container.scss";
 
 //-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\\
 

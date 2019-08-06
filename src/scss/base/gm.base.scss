@@ -1,6 +1,7 @@
 // Estilos Base del Theme
 
+@import "./_theme";
+@import "./_fixed-style";
 @import "./_style-base.scss";
-@import "./theme";
-@import "./fixed-style";
+@import "./libreria/_scrollbar.scss";
 @import "./libreria/_html.scss";

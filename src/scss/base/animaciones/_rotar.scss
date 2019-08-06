@@ -17,7 +17,7 @@
 	animation-name: rotar-izq;
 	animation-direction: normal;
 	animation-duration: #{$time}s;
-	animation-delay: 0;
+	animation-delay: 0s;
 	animation-fill-mode: forwards;
 	animation-play-state: running;
 	animation-timing-function: linear;
@@ -55,7 +55,7 @@
 	animation-name: rotar-der;
 	animation-direction: normal;
 	animation-duration: #{$time}s;
-	animation-delay: 0;
+	animation-delay: 0s;
 	animation-fill-mode: forwards;
 	animation-play-state: running;
 	animation-timing-function: linear;

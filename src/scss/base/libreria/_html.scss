@@ -2,25 +2,30 @@
 //-------------------------------------------------HTML ESTILOS-------------------------------------------------
 //--------------------------------------------------------------------------------------------------------------
 
+/// 
+/// 
+/// @Estilos Generales para Todo la Página
+/// 
+/// 
+
 *{
     margin: 0;
     padding: 0;
-    font-family: ff(1);
-    font-weight: normal;
     
-    scrollbar-width: none; //firefox compatibility
+    outline: 0;
     box-sizing: border-box;
+
+    scrollbar-width: none; //firefox compatibility
     -webkit-overflow-scrolling: touch; // scroll smooth Safari
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    outline: 0;
 }
 
 html, body{
     width: 100%;
     font-size: 16px;
-    
-    scroll-behavior: smooth; //scroll suavizado para anclas
+    font-family: ff(1);
+    font-weight: normal;
 }
 
 a{
@@ -32,58 +37,6 @@ img, svg, source{
 }
 li{
     list-style: none;
-}
-
-//------------------------------------------------------------------------------------\\
-//---------------------------------Scroll-Bar-----------------------------------------\\
-//------------------------------------------------------------------------------------\\
-
-/// @Estilos para Ancho y Alto;
-/// 
-/// @ejemplo
-///     
-///     ::-webkit-scrollbar {
-///         width: 5px;
-///         height: 5px;
-///     }
-///
-
-*::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-}
-
-/// @Estilos para el Background de la barra;
-/// 
-/// @ejemplo
-///     
-///     ::-webkit-scrollbar-track {
-///         background-color: red;
-///     }
-///
-
-*::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-/// @Estilos para la barrita que se mueve;
-/// 
-/// @ejemplo
-///     
-///     ::-webkit-scrollbar-thumb {
-///         background-color: blue;
-///         border-radius: 15px;
-///         border: 1px solid white;
-///     }
-///
-
-*::-webkit-scrollbar-thumb {
-    background: gray(255, .3);
-    border-radius: 30px;
-
-    &:hover{
-        background: gray(100, 1);
-    }
 }
 
 

@@ -17,7 +17,7 @@
 	animation-name: fadeInOut;
 	animation-direction: normal;
 	animation-duration: #{$time}s;
-	animation-delay: 0;
+	animation-delay: 0s;
 	animation-fill-mode: forwards;
 	animation-play-state: running;
 	animation-timing-function: ease-out;
@@ -57,7 +57,7 @@
 	animation-name: fadeIn;
 	animation-direction: normal;
 	animation-duration: #{$time}s;
-	animation-delay: 0;
+	animation-delay: 0s;
 	animation-fill-mode: forwards;
 	animation-play-state: running;
 	animation-timing-function: ease-out;
@@ -94,7 +94,7 @@
 	animation-name: fadeOut;
 	animation-direction: normal;
 	animation-duration: #{$time}s;
-	animation-delay: 0;
+	animation-delay: 0s;
 	animation-fill-mode: forwards;
 	animation-play-state: running;
 	animation-timing-function: ease-out;

@@ -17,7 +17,7 @@
 	animation-name: trasladarXLeft;
 	animation-direction: normal;
 	animation-duration: #{$time}s;
-	animation-delay: 0;
+	animation-delay: 0s;
 	animation-fill-mode: forwards;
 	animation-play-state: running;
 	animation-timing-function: linear;
@@ -54,7 +54,7 @@
 	animation-name: trasladarXRight;
 	animation-direction: normal;
 	animation-duration: #{$time}s;
-	animation-delay: 0;
+	animation-delay: 0s;
 	animation-fill-mode: forwards;
 	animation-play-state: running;
 	animation-timing-function: linear;
@@ -91,7 +91,7 @@
 	animation-name: trasladarYTop;
 	animation-direction: normal;
 	animation-duration: #{$time}s;
-	animation-delay: 0;
+	animation-delay: 0s;
 	animation-fill-mode: forwards;
 	animation-play-state: running;
 	animation-timing-function: linear;
@@ -128,7 +128,7 @@
 	animation-name: trasladarYBottom;
 	animation-direction: normal;
 	animation-duration: #{$time}s;
-	animation-delay: 0;
+	animation-delay: 0s;
 	animation-fill-mode: forwards;
 	animation-play-state: running;
 	animation-timing-function: linear;

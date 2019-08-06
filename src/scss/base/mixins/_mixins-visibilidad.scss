@@ -233,26 +233,6 @@
 	right: #{remover-unidades($r)}px;
 }
 
-/// @Crea un menu fixed con un altura especifica
-/// 
-/// @ejemplo
-/// 
-/// 	.back-menu{
-/// 		@include fixed-menu(100px);
-/// 	}
-/// 
-
-@mixin fixed-menu($height: 60px){
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: #{remover-unidades($height)}px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 /// @Centra el contenido dentro del contenedor con Flexbox
 /// @ejemplo
 /// 
@@ -325,8 +305,8 @@
 /// @ejemplo
 /// 
 /// 	.menu{
-/// 			@include sticky;
-/// 		}
+/// 		@include sticky;
+/// 	}
 /// 
 
 @mixin sticky($s: 0){
