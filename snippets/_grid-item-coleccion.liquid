@@ -1,7 +1,10 @@
 <div class="grid-item-coleccion">
     <a href="{{ product.url }}">
         <div class="img-container">
-            <img src="{{ product.featured_image | img_url: 'master', format: 'pjpg' }}" alt="{{ product.featured_image.alt }}">
+        	<div class="back-img lazyload"
+        		data-bgset="{% include 'bgset-desktop', image: product.featured_image %}"
+				style="background-image: url('{{ product.featured_image | img_url: 'master', format: 'pjpg' }}');">
+			</div>
         </div>
     </a>
 
@@ -9,5 +12,5 @@
         <h3>{{ product.title }}</h3>
     </div>
 
-   {% include 'product-price-custom', variant: product %}
+   {% include 'precio-producto', variant: product %}
 </div>

@@ -12,6 +12,12 @@
 			{% include "grid-item-colecciones" %}
     {% endfor %}
 	</div>
+  
+  {% if section.settings.section_title %}
+    <div class="btn-colecciones">
+      <a href="{{ routes.collections_url }}">Ver Colecciones</a>
+    </div>
+  {% endif %}
 
 </div>
 
@@ -41,6 +47,15 @@
       "label": {
         "en": "Show product vendors",
         "es": "Mostrar proveedores del producto"
+      },
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_btn_all_collections",
+      "label": {
+        "en": "Show button Collections",
+        "es": "Mostrar boton de colecciones"
       },
       "default": false
     }

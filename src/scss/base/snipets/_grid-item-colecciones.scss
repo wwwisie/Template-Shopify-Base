@@ -1,0 +1,13 @@
+@mixin grid-item-colecciones(){
+	.img-container{
+		margin-bottom: 20px;
+		@include back-img;
+		padding-bottom: 120%;
+	}
+
+	.titulo{
+		h2{
+			@include titulo-coleccion;
+		}
+	}
+}

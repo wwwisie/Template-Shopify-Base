@@ -14,6 +14,7 @@
 @mixin btn($type){
 	@include inputReset;
 	padding: 15px 40px;
+	@include margin-h(auto);
 
 	font-family: ff(1);
 	font-size: 16px;
@@ -38,7 +39,6 @@
 		letter-spacing: normal;
 		color: $white;
 		display: inline-block;
-		width: auto;
 
 		@include hasta(750){
 			font-size: 14px;
@@ -49,6 +49,7 @@
 
 	@include hasta(750){
 		padding: 10px 30px;
+		
 		font-size: 14px;
 		letter-spacing: normal;
 		line-height: normal;
@@ -75,7 +76,7 @@
 			color: $colorBase;
 		}
 		&:hover{
-			background-color: rgba($white, 0);
+			background-color: rgba($white, 0) !important;
 			border: 1px solid $colorHoverBase;
 
 			color: $colorHoverBase;
@@ -93,12 +94,30 @@
 			color: $grisBase;
 		}
 		&:hover{
-			background-color: rgba($white, 0);
+			background-color: rgba($white, 0) !important;
 			border: 1px solid $grisHoverBase;
 
 			color: $grisHoverBase;
 			span, p{
 				color: $grisHoverBase;
+			}
+		}
+	}
+	@if ($type == "subrayado"){
+		background-color: rgba($white, 0);
+		border-bottom: 1px solid $colorBase;
+
+		color: $colorBase;
+		span, p{
+			color: $colorBase;
+		}
+		&:hover{
+			background-color: rgba($white, 0) !important;
+			border: 1px solid $colorHoverBase;
+
+			color: $colorHoverBase;
+			span, p{
+				color: $colorHoverBase;
 			}
 		}
 	}

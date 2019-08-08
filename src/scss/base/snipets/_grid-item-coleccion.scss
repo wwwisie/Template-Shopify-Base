@@ -1,22 +1,23 @@
 @mixin grid-item-coleccion(){
-	.grid-item-coleccion{
+	.img-container{
+		margin-bottom: 20px;
+		@include back-img;
+		padding-bottom: 100%;
 
-		.img-container{
-			margin-bottom: 20px;
-			height: 154px;
-			@include center-flex;
-			img{
-				max-height: 100%;
-			}
+		.back-img{
+			background-position: center bottom;
+			background-size: contain;
 		}
+	}
 
-		.titulo{
-			margin-bottom: 6px;
-			h3{
-				@include titulo-producto;
-			}
+	.titulo{
+		margin-bottom: 6px;
+		h3{
+			@include titulo-producto;
 		}
+	}
 
+	.precio-producto{
 		@include precio-producto;
 	}
 }

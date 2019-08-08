@@ -4,6 +4,17 @@
 	assign product_limit = section.settings.columns | times: section.settings.rows
 %}
 
+{% case section.settings.columns %}
+    {% when 2 %}
+      {%- assign gridColumns = 'x2' -%}
+    {% when 3 %}
+      {%- assign gridColumns = 'x3' -%}
+    {% when 4 %}
+      {%- assign gridColumns = 'x4' -%}
+    {% when 5 %}
+      {%- assign gridColumns = 'x5' -%}
+{% endcase %}
+
 <div class="coleccion-destacada">
 
   {% if section.settings.section_title != blank %}
@@ -12,9 +23,9 @@
       </div>
   {% endif %}
 
-	<div class="grid-coleccion">
+	<div class="grid-coleccion {{ gridColumns }}">
 		{% for product in products limit: product_limit %}
-			{% include "section-coleccion-item"%}
+			{% include "grid-item-coleccion"%}
 		{% endfor %}
 	</div>
 

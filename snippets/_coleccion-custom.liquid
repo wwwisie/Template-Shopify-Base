@@ -2,7 +2,7 @@
 
     <div class="grid-coleccion">
 		{% for product in collections[nameColection].products limit: 8 %}
-			{% include "section-coleccion-item"%}
+			{% include "grid-item-coleccion" %}
 		{% endfor %}
 	</div>
 

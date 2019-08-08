@@ -97,6 +97,21 @@
 	}
 }
 
+@mixin titulo-coleccion{
+	font-family: ff(2);
+	font-size: 24px;
+	font-weight: bold;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: $black;
+
+	@include hasta(750){
+		font-size: 20px;
+	}
+}
+
 @mixin titulo-producto{
 	font-family: ff(2);
 	font-size: 18px;

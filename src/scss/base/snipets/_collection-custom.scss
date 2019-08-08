@@ -11,9 +11,7 @@
 		.btn-coleccion{
 			@include center-flex;
 			a{
-				text-transform: uppercase;
 				@include btn("principal");
-				width: 269px;
 			}
 		}
 	}

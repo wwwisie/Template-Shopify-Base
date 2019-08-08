@@ -1,6 +1,5 @@
 
 @mixin colecciones-destacadas(){
-
 	.colecciones-destacadas{
 		@include wrapper;
 		@include padding-v(40);
@@ -12,18 +11,19 @@
 			}
 		}
 
-		.grid-coleccion{
+		.grid-colecciones{
 			margin-bottom: 40px;
 			@include grid(4,2, 25px);
 
-			@include grid-item-coleccion;
+			.grid-item-colecciones{
+				@include grid-item-colecciones;
+			}
 		}
 
-		.btn-coleccion{
+		.btn-colecciones{
 			a{
 				@include btn("principal");
 			}
 		}
 	}
-	
 }

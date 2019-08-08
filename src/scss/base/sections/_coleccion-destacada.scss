@@ -13,9 +13,31 @@
 
 		.grid-coleccion{
 			margin-bottom: 40px;
-			@include grid(4,2, 25px);
+			display: grid;
+			justify-content: center;
+			align-content: center;
+			align-items: start;
 
-			@include grid-item-coleccion;
+			&.x2{
+				grid-template: 1fr / repeat(2, 1fr);
+			}
+			&.x3{
+				grid-template: 1fr / repeat(3, 1fr);
+			}
+			&.x4{
+				grid-template: 1fr / repeat(4, 1fr);
+			}
+			&.x5{
+				grid-template: 1fr / repeat(5, 1fr);
+			}
+
+			@include tablet{
+				grid-template: 1fr / repeat(2, 1fr);
+			}
+			
+			.grid-item-coleccion{
+				@include grid-item-coleccion;
+			}
 		}
 
 		.btn-coleccion{
