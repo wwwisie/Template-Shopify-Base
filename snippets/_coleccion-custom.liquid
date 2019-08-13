@@ -1,3 +1,11 @@
+{% comment %}
+    
+    @Como Usar este Snipet:
+
+        {% include "coleccion-custom", nameColeccion: "mis-productos" class: "active"  %}
+
+{% endcomment %}
+
 <div class="coleccion-custom {% if class != blank %}{{ class }}{% endif %}">
 
     <div class="grid-coleccion">

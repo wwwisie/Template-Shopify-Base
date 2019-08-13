@@ -257,50 +257,6 @@
 	    var img = document.createElement("img");
 	    img.src = imageSrc;
 
-	  //   function detectDarken(){
-	  //   	return new Promise(function(resuelto, rechazado){
-		 //        // create canvas
-		 //        let canvas = document.createElement("canvas");
-		 //        canvas.width = img.width;
-		 //        canvas.height = img.height;
-
-		 //        let ctx = canvas.getContext("2d");
-		 //        ctx.drawImage(img,0,0);
-
-		 //        let imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
-		 //        let data = imageData.data;
-		 //        let r,g,b, max_rgb;
-		 //        let light = 0, dark = 0;
-
-		 //        for(let x = 0, len = data.length; x < len; x+=4) {
-		 //            r = data[x];
-		 //            g = data[x+1];
-		 //            b = data[x+2];
-
-		 //            max_rgb = Math.max(Math.max(r, g), b);
-		 //            if (max_rgb < 128)
-		 //                dark++;
-		 //            else
-		 //                light++;
-		 //        }
-
-		 //        let dl_diff = ((light - dark) / (this.width*this.height));
-		 //        if (dl_diff + fuzzy < 0)
-		 //            resuelto(true); /* Dark. */
-		 //        else
-		 //            resuelto(false);  /* Not dark. */
-		 //    })
-	  //   }
-	  //   img.onload = function(){
-	  //   	return detectDarken()
-	  //   }
-	  //   .then(function($isDark){
-			// callback($isDark)
-	  //   })
-	  //   .cath(function(){
-	  //   	alert("Upss :(, Hubo un error al saber la obscuridad de la imagen.")
-	  //   })
-
 	    img.onload = function() {
 	        // create canvas
 	        var canvas = document.createElement("canvas");
@@ -497,7 +453,7 @@
 	}
 
 /**-------------------------------------------------------------------------------------------**/
-/**--Cascada de Imaagenes Plugin                                                              **/  
+/**--Cascada de Imagenes Plugin                                                              **/  
 /**-------------------------------------------------------------------------------------------**/
 
 	function cascadaImg(args = {}){
@@ -820,8 +776,73 @@
 		}
 	}
 
+/**-------------------------------------------------------------------------------------------**/
+/**--Función Colecciones en Tabs                                                          **/  
+/**-------------------------------------------------------------------------------------------**/
 
+	function ColeccionesTabs(){
+		if(existe(".ColeccionesTabs")){
+			const $ColeccionesTabs = $(".ColeccionesTabs")
 
+			// si esta en responsivo se inicializa el slider
+				if(window.innerWidth <= 768){
+					$ColeccionesTabs.find(".colecciones .coleccion.visible .grid-coleccion").slick({
+				        infinite: true,
+				        slidesToShow: 1,
+				        slidesToScroll: 1,
+				        arrows: false,
+				        dots: false,
+			      	});
+				}
+
+			// control del Menu
+				$ColeccionesTabs.find(".menu-tabs li").click(function(){
+					$ColeccionesTabs.find(".menu-tabs li").removeClass("active")
+					$(this).addClass("active")
+
+					const $indexOpcionActual = $(this).index()
+
+					if(window.innerWidth <= 768){
+						$ColeccionesTabs.find(".colecciones .coleccion.visible .grid-coleccion").slick("unslick");
+					}
+
+					$ColeccionesTabs.find(".colecciones .coleccion").removeClass("visible")
+					$ColeccionesTabs.find(".colecciones .coleccion").eq($indexOpcionActual).addClass("visible")
+
+					if(window.innerWidth <= 768){
+						$ColeccionesTabs.find(".colecciones .coleccion.visible .grid-coleccion").slick({
+					        infinite: true,
+					        slidesToShow: 1,
+					        slidesToScroll: 1,
+					        arrows: false,
+					        dots: false,
+				      	});
+					}
+				})
+
+			// Check cuando hace resize
+				new WindowEvents({
+					afterResize: (props, event) => {
+					    if(props.width <= 768){
+					    	if(!existe(".coleccion.visible .slick-initialized")){
+								$ColeccionesTabs.find(".colecciones .coleccion.visible .grid-coleccion").slick({
+							        infinite: true,
+							        slidesToShow: 1,
+							        slidesToScroll: 1,
+							        arrows: false,
+							        dots: false,
+						      	});
+					    	}
+						}
+						else{
+							if(existe(".coleccion.visible .slick-initialized")){
+								$ColeccionesTabs.find(".colecciones .coleccion.visible .grid-coleccion").slick("unslick");
+					    	}
+						}
+					}
+				})
+		}
+	}
 
 
 

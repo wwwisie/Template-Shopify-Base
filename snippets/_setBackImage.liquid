@@ -1,11 +1,20 @@
+{% comment %}
+	
+	@Como Usar este Snipet:
+
+		{% include "setBackImage", image: image %}
+		{% include "setBackImage", image: image, inMobile: true %}
+
+{% endcomment %}
+
 {% if inMobile %}
 	<div class="back-img inMobile lazyload"
 		data-bgset="{% include 'bgset-mobile', image: image %}"
-		style="background-image: url('{{ imgUrl | img_url: 'master', format: 'pjpg' }});">
+		style="background-image: url('{{ image | img_url: 'master', format: 'pjpg' }});">
 	</div>
 {% else %}
 	<div class="back-img lazyload"
 		data-bgset="{% include 'bgset-desktop', image: image %}"
-		style="background-image: url('{{ imgUrl | img_url: 'master', format: 'pjpg' }});">
+		style="background-image: url('{{ image | img_url: 'master', format: 'pjpg' }});">
 	</div>
 {% endif %}

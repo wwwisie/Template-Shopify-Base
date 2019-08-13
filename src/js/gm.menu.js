@@ -11,16 +11,7 @@ $(document).ready(function(){
 	/**                                          Menu                                             **/  
 	/**-------------------------------------------------------------------------------------------**/
 		
-		let isOpen = false
-		$menu.find(".btn-hamburguesa").click(function(){
-
-			if(isOpen){
-				isOpen = false
-			}
-			else{
-				isOpen = true
-			}
-		})
+		
 });
 
 

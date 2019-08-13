@@ -1,3 +1,14 @@
+{% comment %}
+    
+    @Tener en Mente que es una seccion dinamica que el usuario podra mover desde el admin.
+
+    @Como Usar este Snipet:
+
+        {% section "seccion-coleccion-destacada"  %}
+
+{% endcomment %}
+
+
 {%
 	assign collection = collections[section.settings.select_collection].products
 	assign products = collection.products

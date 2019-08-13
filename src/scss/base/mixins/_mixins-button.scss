@@ -40,14 +40,14 @@
 		color: $white;
 		display: inline-block;
 
-		@include hasta(750){
+		@include hasta(749){
 			font-size: 14px;
 			letter-spacing: normal;
 			line-height: normal;
 		}
 	}
 
-	@include hasta(750){
+	@include hasta(749){
 		padding: 10px 30px;
 		
 		font-size: 14px;
