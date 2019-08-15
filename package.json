@@ -10,8 +10,7 @@
     "update": "theme download",
     "theme": "theme watch",
     "gulp": "npx gulp watch",
-    "live-reload": "npx browser-sync start --proxy 'https://x.myshopify.com/' --files '*/*.*' --reload-delay 5000",
-    "dev": "run-p gulp theme live-reload"
+    "dev": "run-p gulp theme"
   },
   "repository": {
     "type": "git",
@@ -38,7 +37,6 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "browser-sync": "^2.26.7",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
