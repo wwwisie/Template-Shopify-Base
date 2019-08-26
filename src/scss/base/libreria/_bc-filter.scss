@@ -1,0 +1,179 @@
+//--------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------BC-Filter-------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+
+/// 
+/// 
+/// @Estilos para el buscador de la app de BC-Filter
+/// 
+/// 
+
+@mixin BC-Filter{
+	
+	// Resultados de Busqueda
+	.bc-sf-search-suggestion-wrapper{
+
+		@media all and (min-width: 769px){
+			display: none !important;
+			> ul{
+				display: none !important;
+			}
+		}
+
+		.ui-menu{
+			//titulos secciones
+			.bc-sf-search-suggestion-header-collection,
+			.bc-sf-search-suggestion-header-popular,
+			.bc-sf-search-suggestion-header-product{
+				font-family: ff(1);
+				font-size: 9px;
+				font-weight: normal;
+				font-style: normal;
+				font-stretch: normal;
+				line-height: 1.73;
+				letter-spacing: normal;
+				color: $colorBase;
+				background-color: $white;
+			}
+			
+			// Sugerencias e items
+			.bc-sf-search-suggestion-item{
+				background-color: $black;
+				border-radius: 0;
+				&:before{
+					border-radius: 0;	
+					background-color: $white;
+				}
+				a{
+					font-family: ff(1);
+					font-size: 13px;
+					font-weight: 900;
+					font-style: normal;
+					font-stretch: normal;
+					line-height: 1.73;
+					letter-spacing: normal;
+					color: #5a5a5a;
+					color: rgba($white, 0.8);
+					b, strong{
+						color: $white;
+					}
+				}
+			}
+			
+			//Resultados productos
+			.bc-sf-search-suggestion-item-product{
+				.bc-sf-search-suggestion-right{
+					.bc-sf-search-suggestion-product-title{
+						font-family: ff(1);
+						font-size: 13px;
+						font-weight: 900;
+						font-style: normal;
+						font-stretch: normal;
+						line-height: normal;
+						letter-spacing: normal;
+						color: $white;
+
+						@media all and (max-width: 798px){
+							font-size: 11px;
+						}
+					}
+
+					.bc-sf-search-suggestion-product-sku,
+					.bc-sf-search-suggestion-product-vendor{
+						font-family: ff(1);
+						font-size: 11px;
+						font-weight: normal;
+						font-style: normal;
+						font-stretch: normal;
+						line-height: normal;
+						letter-spacing: normal;
+						color: $white;
+					}
+
+					.bc-sf-search-suggestion-product-price{
+						span{
+							font-family: ff(1);
+							font-size: 13px;
+							font-weight: normal;
+							font-style: normal;
+							font-stretch: normal;
+							line-height: normal;
+							letter-spacing: normal;
+							color: $white;
+
+							@media all and (max-width: 798px){
+								font-size: 11px;
+							}
+						}
+					}
+				}
+			}
+			
+			//Button de ver el resto de productos
+			.bc-sf-search-suggestion-header-view-all{
+				background-color: $white;
+				a{
+					font-family: ff(1);
+					font-size: 13px;
+					font-weight: 900;
+					font-style: normal;
+					font-stretch: normal;
+					line-height: normal;
+					letter-spacing: normal;
+					color: $colorBase !important;
+
+					@media all and (max-width: 798px){
+						font-size: 11px;
+					}
+				}
+			}
+		}
+	}
+
+	// SideBar Filter
+	#bc-sf-filter-options-wrapper{
+		.bc-sf-filter-block-title{
+			*{
+				font-family: ff(2);
+				font-size: 15px;
+				font-weight: bold;
+				font-style: normal;
+				font-stretch: normal;
+				line-height: normal;
+				letter-spacing: normal;
+				color: $colorVistas;
+			}
+		}
+
+		.bc-sf-filter-block-content{
+			li{
+				a{
+					*{
+						font-family: ff(1);
+						font-size: 15px;
+						font-weight: normal;
+						font-style: normal;
+						font-stretch: normal;
+						line-height: normal;
+						letter-spacing: normal;
+						text-align: center;
+						color: $colorVistas;
+					}
+				}
+			}
+
+			.bc-sf-filter-option-range-amount *,
+			.bc-sf-filter-option-range-slider .noUi-value{
+				font-family: ff(1);
+				font-size: 13px;
+				font-weight: normal;
+				font-style: normal;
+				font-stretch: normal;
+				line-height: normal;
+				letter-spacing: normal;
+				text-align: center;
+				color: $colorVistas;
+			}
+		}
+	}
+}
